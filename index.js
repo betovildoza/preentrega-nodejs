@@ -1,4 +1,3 @@
-// index.js
 import { obtenerProducto, obtenerProductos, agregarProducto, eliminarProducto } from "./fakestoreAPI.js"
 
 const argumentos = process.argv.slice(2)

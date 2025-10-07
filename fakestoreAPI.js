@@ -1,13 +1,10 @@
-// fakestoreAPI.js
 import fetch from "node-fetch"
 
-// Obtener todos los productos
 export async function obtenerProductos() {
   try {
     const respuesta = await fetch("https://fakestoreapi.com/products")
     const data = await respuesta.json()
 
-    // Mostrar cada producto en consola
     data.map((producto) => {
       console.log(`ID: ${producto.id} | ${producto.title} - $${producto.price}`)
     })
@@ -18,7 +15,6 @@ export async function obtenerProductos() {
   }
 }
 
-// Obtener un producto por ID (ej: "products/15")
 export async function obtenerProducto(id) {
   try {
     const respuesta = await fetch(`https://fakestoreapi.com/${id}`)
@@ -31,7 +27,6 @@ export async function obtenerProducto(id) {
   }
 }
 
-// Agregar un nuevo producto
 export async function agregarProducto(producto) {
   try {
     const respuesta = await fetch("https://fakestoreapi.com/products", {
@@ -51,7 +46,6 @@ export async function agregarProducto(producto) {
   }
 }
 
-// Eliminar un producto (ej: "products/2")
 export async function eliminarProducto(id) {
   try {
     const respuesta = await fetch(`https://fakestoreapi.com/${id}`, {
